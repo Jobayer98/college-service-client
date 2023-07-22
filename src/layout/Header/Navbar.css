@@ -1,0 +1,10 @@
+.custom_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.active {
+  color: #ff3811;
+}

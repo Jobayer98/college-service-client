@@ -1,5 +1,11 @@
+import AdmissionForm from "./AddmissionForm";
+
 const Admission = () => {
-  return <div>Admission</div>;
+  return (
+    <div>
+      <AdmissionForm />
+    </div>
+  );
 };
 
 export default Admission;

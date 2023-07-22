@@ -4,11 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#1a202c",
-        secondary: "#fff",
-        // add other theme-specific colors
+        primary: "#fff",
+        secondary: "#111",
       },
     },
+  },
+  daisyui: {
+    themes: ["light", "night"],
   },
   plugins: [require("daisyui")],
 };

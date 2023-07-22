@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
-
+import Theme from "./Theme";
+import "./Navbar.css";
 const NavBar = () => {
   return (
-    <nav className="w-full navbar bg-base-300">
+    <nav className="w-full navbar bg-base-200 text-base-content border-b border-b-gray-300 fixed">
       <div className="flex-none lg:hidden">
         <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
           <svg
@@ -24,24 +25,32 @@ const NavBar = () => {
         <NavLink to="/">Title</NavLink>
       </div>
       <div className="flex-none hidden lg:block">
-        <ul className="menu menu-horizontal">
-          {/* Navbar menu content here */}
-          <li>
-            <NavLink to="/colleges">Colleges</NavLink>
-          </li>
-          <li>
-            <NavLink to="/Admission">Admission</NavLink>
-          </li>
-          <li>
-            <NavLink to="/my-college">My College</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
-        </ul>
+        <div className="flex items-center">
+          <ul className="custom_menu menu-horizontal">
+            {/* Navbar menu content here */}
+            <li>
+              <NavLink
+                to="/colleges"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Colleges
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/Admission">Admission</NavLink>
+            </li>
+            <li>
+              <NavLink to="/my-college">My College</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
+          </ul>
+          <Theme />
+        </div>
       </div>
     </nav>
   );
