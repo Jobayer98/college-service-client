@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import CollegeCard from "./CollegeCard/CollegeCard";
 import CollegeImageGallery from "./CollegeGallery/CollegeGallery";
+import RecommendedResearchPapers from "./ResearchPaper/ResearchPaper";
+import CollegeReviews from "./Review/Review";
 
 const Home = () => {
   const [colleges, setColleges] = useState([]);
@@ -15,7 +17,7 @@ const Home = () => {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
   return (
     <div className="container mx-auto py-20">
       <section>
@@ -28,6 +30,12 @@ const Home = () => {
       </section>
       <section>
         <CollegeImageGallery />
+      </section>
+      <section>
+        <RecommendedResearchPapers />
+      </section>
+      <section>
+        <CollegeReviews />
       </section>
     </div>
   );

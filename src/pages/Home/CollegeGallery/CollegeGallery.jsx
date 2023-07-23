@@ -16,10 +16,7 @@ const CollegeImageGallery = () => {
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-4 gap-4">
         {collegeImages.map((image) => (
-          <div
-            key={image.id}
-            className="bg-white rounded-lg shadow-md overflow-hidden"
-          >
+          <div key={image.id} className="bg-white">
             <img
               src={image.imageUrl}
               alt={image.caption}
