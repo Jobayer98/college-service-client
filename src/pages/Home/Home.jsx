@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CollegeCard from "./CollegeCard/CollegeCard";
+import CollegeImageGallery from "./CollegeGallery/CollegeGallery";
 
 const Home = () => {
   const [colleges, setColleges] = useState([]);
@@ -24,6 +25,9 @@ const Home = () => {
             <CollegeCard key={college.id} college={college} />
           ))}
         </div>
+      </section>
+      <section>
+        <CollegeImageGallery />
       </section>
     </div>
   );
