@@ -3,6 +3,8 @@ import CollegeCard from "./CollegeCard/CollegeCard";
 import CollegeImageGallery from "./CollegeGallery/CollegeGallery";
 import RecommendedResearchPapers from "./ResearchPaper/ResearchPaper";
 import CollegeReviews from "./Review/Review";
+import HeroSection from "./HeroSection/HeroSection";
+import Search from "./Search/Search";
 
 const Home = () => {
   const [colleges, setColleges] = useState([]);
@@ -19,24 +21,31 @@ const Home = () => {
       });
   }, []);
   return (
-    <div className="container mx-auto py-20">
-      <section>
-        <h1 className="text-5xl font-bold text-center mb-4">Colleges</h1>
-        <div className="grid justify-center items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {colleges.map((college) => (
-            <CollegeCard key={college.id} college={college} />
-          ))}
-        </div>
-      </section>
-      <section>
-        <CollegeImageGallery />
-      </section>
-      <section>
-        <RecommendedResearchPapers />
-      </section>
-      <section>
-        <CollegeReviews />
-      </section>
+    <div>
+      <HeroSection />
+      <div className="container mx-auto py-20">
+        <section>
+          <h1 className="text-5xl font-bold text-center mb-4">Colleges</h1>
+          <div className="grid justify-center items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {colleges.map((college) => (
+              <CollegeCard key={college.id} college={college} />
+            ))}
+          </div>
+        </section>
+        <section>
+          <Search />
+        </section>
+        <section>
+          <CollegeImageGallery />
+        </section>
+
+        <section>
+          <RecommendedResearchPapers />
+        </section>
+        <section>
+          <CollegeReviews />
+        </section>
+      </div>
     </div>
   );
 };
