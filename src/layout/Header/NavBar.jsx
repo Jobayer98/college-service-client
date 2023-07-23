@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Theme from "./Theme";
 import "./Navbar.css";
 const NavBar = () => {
@@ -22,7 +22,7 @@ const NavBar = () => {
         </label>
       </div>
       <div className="flex-1 px-2 mx-2">
-        <NavLink to="/">Title</NavLink>
+        <Link to="/">Title</Link>
       </div>
       <div className="flex-none hidden lg:block">
         <div className="flex items-center">

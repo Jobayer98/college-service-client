@@ -1,5 +1,11 @@
+import College from "./College/College";
+
 const Colleges = () => {
-  return <div>Colleges</div>;
+  return (
+    <div>
+      <College />
+    </div>
+  );
 };
 
 export default Colleges;
