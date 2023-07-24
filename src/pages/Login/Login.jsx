@@ -130,7 +130,7 @@ const Login = () => {
               </div>
               <div className="form-control mt-6">
                 <button
-                  className="bg-[#ff3811] text-white p-2 rounded font-medium cursor-pointer"
+                  className="bg-blue-700 text-white p-2 rounded font-medium cursor-pointer"
                   type="submit"
                 >
                   Login
@@ -139,7 +139,7 @@ const Login = () => {
             </form>
             <p className="my-4 text-center">
               New to here?{" "}
-              <Link className="text-orange-600 font-bold" to="/signup">
+              <Link className="text-blue-600 font-bold" to="/signup">
                 Sign Up
               </Link>{" "}
             </p>

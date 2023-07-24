@@ -11,31 +11,29 @@ const Colleges = () => {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer hendrerit lacinia mauris, ac feugiat magna porttitor ac.",
   };
   return (
-    <div>
-      <div className="container mx-auto py-8">
-        <div className="grid justify-center items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Card
-            collegeName={collegeDetails.collegeName}
-            admissionDates={collegeDetails.admissionDates}
-            events={collegeDetails.events}
-            researchHistory={collegeDetails.researchHistory}
-            sports={collegeDetails.sports}
-          />
-          <Card
-            collegeName={collegeDetails.collegeName}
-            admissionDates={collegeDetails.admissionDates}
-            events={collegeDetails.events}
-            researchHistory={collegeDetails.researchHistory}
-            sports={collegeDetails.sports}
-          />
-          <Card
-            collegeName={collegeDetails.collegeName}
-            admissionDates={collegeDetails.admissionDates}
-            events={collegeDetails.events}
-            researchHistory={collegeDetails.researchHistory}
-            sports={collegeDetails.sports}
-          />
-        </div>
+    <div className="max-w-5xl mx-auto py-8 my-32">
+      <div className="grid justify-center items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Card
+          collegeName={collegeDetails.collegeName}
+          admissionDates={collegeDetails.admissionDates}
+          events={collegeDetails.events}
+          researchHistory={collegeDetails.researchHistory}
+          sports={collegeDetails.sports}
+        />
+        <Card
+          collegeName={collegeDetails.collegeName}
+          admissionDates={collegeDetails.admissionDates}
+          events={collegeDetails.events}
+          researchHistory={collegeDetails.researchHistory}
+          sports={collegeDetails.sports}
+        />
+        <Card
+          collegeName={collegeDetails.collegeName}
+          admissionDates={collegeDetails.admissionDates}
+          events={collegeDetails.events}
+          researchHistory={collegeDetails.researchHistory}
+          sports={collegeDetails.sports}
+        />
       </div>
     </div>
   );

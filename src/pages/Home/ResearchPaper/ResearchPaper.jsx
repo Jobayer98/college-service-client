@@ -23,7 +23,7 @@ const RecommendedResearchPapers = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto my-8">
+    <div className="max-w-4xl mx-auto my-20">
       <h2 className="text-2xl font-bold mb-4">Recommended Research Papers</h2>
       <ul className="divide-y divide-gray-200">
         {recommendedPapers.map((paper) => (

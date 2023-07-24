@@ -1,27 +1,28 @@
-import img from "../../../assets/Image.png";
+import img from "../../../assets/banner.webp";
 import { BsArrowRightShort } from "react-icons/bs";
 const HeroSection = () => {
   return (
     <div
-      className="bg-[#f1eff0] h-[520px] flex flex-col justify-center bg-center bg-cover pl-20 mt-16"
+      className="bg-[#f1eff0] h-[324px] md:h-[624] lg:h-[711px] flex flex-col justify-center bg-center bg-cover pl-12 lg:pl-32 my-16"
       style={{ backgroundImage: `url(${img})` }}
     >
       <div>
-        <p className="font-[Yellowtail] text-[#68A47F] text-2xl">
-          100% Natural Food
-        </p>
-        <h2 className="text-7xl font-extrabold text-gray-700">
-          Choose the best <br />
-          healthier way <br /> of life
+        <h2 className="text-4xl w-[424px] lg:w-full font-bold text-gray-900">
+          The Real Deal On Applying To College
         </h2>
+        <p className="w-[40%] mt-4">
+          Access information on 800+ colleges and universities, planning tools,
+          and a vibrant online community to guide you to the college experience
+          of your dreams.
+        </p>
       </div>
       <button
         className={
-          "w-fit flex items-center gap-2 mt-8 px-3 py-1 rounded font-medium bg-[#EFD372] text-[#274c5b]"
+          "w-fit flex items-center gap-1 mt-8 px-3 py-2 rounded-lg font-medium bg-blue-800 text-white"
         }
       >
-        Explore Now{" "}
-        <BsArrowRightShort className="bg-[#274c5b] text-white rounded-full ml-1" />
+        Get Started{" "}
+        <BsArrowRightShort className="text-white text-lg font ml-1" />
       </button>
     </div>
   );

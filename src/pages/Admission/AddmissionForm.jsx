@@ -110,7 +110,7 @@ const AdmissionForm = () => {
         </div>
         <div className="flex items-center justify-center">
           <button
-            className="bg-orange-700 hover:bg-orange-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-8"
+            className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-8"
             type="submit"
           >
             Submit

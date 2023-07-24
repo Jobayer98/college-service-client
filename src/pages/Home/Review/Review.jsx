@@ -54,8 +54,8 @@ const CollegeReviews = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto my-8">
-      <h2 className="text-2xl font-bold mb-4">College Reviews</h2>
+    <div className="max-w-4xl mx-auto my-20">
+      <h2 className="text-2xl font-bold mb-8 text-center">College Reviews</h2>
       <Swiper
         slidesPerView={2}
         spaceBetween={30}
@@ -68,7 +68,7 @@ const CollegeReviews = () => {
         {collegeReviews.map((review) => (
           <SwiperSlide
             key={review.id}
-            className="myswiper bg-white rounded-lg shadow-md p-4 mb-10"
+            className="myswiper bg-white rounded-lg shadow-md p-4 mb-16"
           >
             <h3 className="text-lg font-bold mb-2">{review.collegeName}</h3>
             <p className="text-gray-600 mb-2">{review.review}</p>

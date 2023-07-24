@@ -71,7 +71,7 @@ const Register = () => {
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="bg-[#ff3811] text-white p-2 rounded font-medium cursor-pointer"
+                  className="bg-blue-700 text-white p-2 rounded font-medium cursor-pointer"
                   type="submit"
                   value="Sign Up"
                 />
@@ -79,7 +79,7 @@ const Register = () => {
             </form>
             <p className="my-4 text-center">
               Already Have an Account?{" "}
-              <Link className="text-orange-600 font-bold" to="/login">
+              <Link className="text-blue-600 font-bold" to="/login">
                 Login
               </Link>{" "}
             </p>

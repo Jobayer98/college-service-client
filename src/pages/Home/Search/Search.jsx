@@ -3,7 +3,7 @@ import SCard from "./SCard";
 
 const Search = () => {
   return (
-    <section>
+    <section className="my-16">
       <div
         className="min-h-[300px] bg-cover bg object-cover bg-center "
         style={{ backgroundImage: `url(${img})` }}

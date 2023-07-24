@@ -18,7 +18,7 @@ const Card = ({
   };
 
   return (
-    <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="max-w-sm mx-auto bg-gray-50 shadow-lg rounded-lg overflow-hidden">
       <figure>
         <img
           src="https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"

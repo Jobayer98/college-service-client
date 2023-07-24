@@ -1,6 +1,6 @@
 const SCard = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 max-w-4xl mx-auto bg-gray-50">
       <div className="p-3">
         <h1 className="text-2xl border-t-2 border-t-gray-950 pt-2 my-2">
           Newsroom

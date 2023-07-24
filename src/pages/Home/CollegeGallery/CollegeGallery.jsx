@@ -10,13 +10,16 @@ const CollegeImageGallery = () => {
   }));
 
   return (
-    <div className="max-w-4xl mx-auto my-8">
+    <section className="max-w-4xl mx-auto my-8">
       <h2 className="text-2xl font-bold mb-4">
         College Graduate Image Gallery
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-4 gap-4">
         {collegeImages.map((image) => (
-          <div key={image.id} className="bg-white">
+          <div
+            key={image.id}
+            className="border hover:shadow-xl transition-all duration-500 ease-in-out"
+          >
             <img
               src={image.imageUrl}
               alt={image.caption}
@@ -28,7 +31,7 @@ const CollegeImageGallery = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
