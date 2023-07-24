@@ -54,7 +54,7 @@ const CollegeReviews = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto my-20">
+    <div className="max-w-4xl mx-auto my-20">
       <h2 className="text-2xl font-bold mb-8 text-center">College Reviews</h2>
       <Swiper
         slidesPerView={2}
@@ -63,7 +63,7 @@ const CollegeReviews = () => {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="mySwiper hidden lg:block"
       >
         {collegeReviews.map((review) => (
           <SwiperSlide
@@ -75,7 +75,32 @@ const CollegeReviews = () => {
             <p className="text-gray-800 font-bold">{review.reviewer}</p>
             <div className="flex items-center mt-2">
               <span>
-                <Rating style={{ maxWidth: 130 }} value={3} readOnly />
+                <Rating style={{ maxWidth: 130 }} value={5} readOnly />
+              </span>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper max-w-lg block lg:hidden"
+      >
+        {collegeReviews.map((review) => (
+          <SwiperSlide
+            key={review.id}
+            className="myswiper bg-white rounded-lg shadow-md p-4 mb-16"
+          >
+            <h3 className="text-lg font-bold mb-2">{review.collegeName}</h3>
+            <p className="text-gray-600 mb-2">{review.review}</p>
+            <p className="text-gray-800 font-bold">{review.reviewer}</p>
+            <div className="flex items-center mt-2">
+              <span>
+                <Rating style={{ maxWidth: 130 }} value={5} readOnly />
               </span>
             </div>
           </SwiperSlide>
@@ -86,13 +111,3 @@ const CollegeReviews = () => {
 };
 
 export default CollegeReviews;
-
-<Swiper
-  slidesPerView={3}
-  spaceBetween={30}
-  pagination={{
-    clickable: true,
-  }}
-  modules={[Pagination]}
-  className="mySwiper"
-></Swiper>;

@@ -2,32 +2,44 @@ const CollegeImageGallery = () => {
   // Function to generate a random image URL
 
   // Generate a list of random college graduate group pictures
-  const collegeImages = Array.from({ length: 6 }, (_, index) => ({
-    id: index + 1,
-    imageUrl:
-      "https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60",
-    caption: `College Graduates Group ${index + 1}`,
-  }));
+  const collegeImages = [
+    {
+      id: 1,
+      url: "https://static8.depositphotos.com/1278120/896/i/450/depositphotos_8963157-Graduation-group.jpg",
+    },
+    {
+      id: 2,
+      url: "https://media.istockphoto.com/id/482362583/photo/multi-ethnic-friends-excitedly-hold-diplomas-after-college-graduation.jpg?s=612x612&w=0&k=20&c=0u-Jm_50Rtdwl5n8vMZ-ROfxEg-BCSmg3ZKJJ_w5CWY=",
+    },
+    {
+      id: 3,
+      url: "https://media.istockphoto.com/id/483228379/photo/graduating-class.jpg?s=612x612&w=0&k=20&c=tfxSle4u-YBfEQGEcm3JoGdyPsv5M8RnkNjmowQyogQ=",
+    },
+    {
+      id: 4,
+      url: "https://cdn.create.vista.com/api/media/medium/258235102/stock-photo-happy-group-students-graduation-gowns?token=",
+    },
+    {
+      id: 5,
+      url: "https://t4.ftcdn.net/jpg/03/38/75/21/360_F_338752127_KeLWD80r6a6tNugFmVrvcma5zN5jdQBn.jpg",
+    },
+    {
+      id: 6,
+      url: "https://www.brookings.edu/wp-content/uploads/2023/04/shutterstock_658847998.jpg",
+    },
+  ];
 
   return (
     <section className="max-w-5xl mx-auto my-8">
-      <h2 className="text-2xl font-bold mb-4">
-        College Graduate Image Gallery
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-4 gap-4">
+      <h2 className="text-2xl font-bold mb-4">Graduate Image Gallery</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-4">
         {collegeImages.map((image) => (
-          <div
-            key={image.id}
-            className="border hover:shadow-xl transition-all duration-500 ease-in-out"
-          >
+          <div key={image.id} className="border">
             <img
-              src={image.imageUrl}
-              alt={image.caption}
-              className="w-full h-40 object-cover"
+              src={image.url}
+              alt="image"
+              className="w-full h-40 object-cover hover:scale-105 transition-all duration-500 ease-in-out"
             />
-            <div className="p-4">
-              <p className="text-gray-800 font-bold mb-2">{image.caption}</p>
-            </div>
           </div>
         ))}
       </div>

@@ -52,12 +52,14 @@ const PopularCollege = () => {
   return (
     <div className="bg-gray-100 p-1">
       <section className="my-24 max-w-5xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Colleges in Popular City</h1>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <h1 className="text-3xl text-center md:text-left font-bold mb-8">
+          Colleges in Popular City
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-center">
           {colleges.map((college) => (
             <div
               key={college.id}
-              className="border bg-white hover:shadow-xl rounded-lg"
+              className="border bg-white hover:shadow-xl rounded-lg w-[70%] mx-auto md:w-full"
             >
               <img
                 src={college.url}

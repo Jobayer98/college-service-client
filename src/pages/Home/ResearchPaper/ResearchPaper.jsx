@@ -23,8 +23,8 @@ const RecommendedResearchPapers = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto my-20">
-      <h2 className="text-2xl font-bold mb-4">Recommended Research Papers</h2>
+    <section className="w-fit lg:w-[722px] mx-auto my-8">
+      <h2 className="text-2xl font-bold mb-4">Research Papers</h2>
       <ul className="divide-y divide-gray-200">
         {recommendedPapers.map((paper) => (
           <li key={paper.id} className="py-4">
@@ -40,7 +40,7 @@ const RecommendedResearchPapers = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

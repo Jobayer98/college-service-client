@@ -12,7 +12,7 @@ import p10 from "../../../assets/partner/the_chronicle.png";
 import { BsCheckCircle } from "react-icons/bs";
 const CollegePlan = () => {
   return (
-    <section className="my-16 max-w-6xl mx-auto">
+    <section className="my-16 max-w-6xl mx-auto hidden md:block">
       <h1 className="text-3xl font-bold text-center mb-4">
         We Have Been Featured In
       </h1>

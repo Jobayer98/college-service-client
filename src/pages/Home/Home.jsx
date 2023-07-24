@@ -12,14 +12,16 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <Why />
-      <PopularCollege />
-      <Search />
-      <Colleges />
-      <CollegePlan />
-      <CollegeImageGallery />
-      <RecommendedResearchPapers />
-      <CollegeReviews />
+      <main className="mx-8 md:mx-16 lg:mx32">
+        <Why />
+        <PopularCollege />
+        <Search />
+        <Colleges />
+        <CollegePlan />
+        <CollegeImageGallery />
+        <RecommendedResearchPapers />
+        <CollegeReviews />
+      </main>
     </>
   );
 };

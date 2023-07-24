@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import Theme from "./Theme";
 import "./Navbar.css";
+import Search from "./Search";
 const NavBar = () => {
   return (
     <nav className="w-full navbar bg-base-200 text-base-content border-b border-b-gray-300 fixed">
@@ -30,6 +31,7 @@ const NavBar = () => {
         <div className="flex items-center">
           <ul className="custom_menu menu-horizontal">
             {/* Navbar menu content here */}
+            <Search />
             <li>
               <NavLink
                 to="/colleges"

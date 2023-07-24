@@ -3,14 +3,14 @@ import { BsArrowRightShort } from "react-icons/bs";
 const HeroSection = () => {
   return (
     <div
-      className="bg-[#f1eff0] h-[324px] md:h-[591px] lg:h-[712px] flex flex-col justify-center bg-cover pl-12 lg:pl-32 my-16"
+      className="bg-[#f1eff0] h-[324px] md:h-[591px] lg:h-[712px] flex flex-col justify-center bg-cover bg-center  pl-12 lg:pl-32 my-16"
       style={{ backgroundImage: `url(${img})` }}
     >
       <div>
-        <h2 className="text-4xl w-[424px] lg:w-full font-bold text-gray-900">
+        <h2 className="text-3xl md:text-4xl w-[324px] lg:w-full font-bold text-gray-900 bg-gray-50 md:bg-transparent">
           The Real Deal On Applying To College
         </h2>
-        <p className="w-[40%] mt-4">
+        <p className="w-[40%] text-sm md:text-base mt-4">
           Access information on 800+ colleges and universities, planning tools,
           and a vibrant online community to guide you to the college experience
           of your dreams.
