@@ -1,8 +1,8 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import toggleReducer from "../features/toggleTheme/toggleThemeSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import authReducer from "../features/auth/authSlice";
 
-// export default configureStore({
-//   reducer: {
-//     toggleTheme: toggleReducer,
-//   },
-// });
+export default configureStore({
+  reducer: {
+    auth: authReducer,
+  },
+});

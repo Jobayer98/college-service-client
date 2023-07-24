@@ -1,31 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // import img from "../../assets/images/login/login.svg";
-// import { useContext, useState } from "react";
-// import AuthContext from "../../context/AuthContext";
-// import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { login } from "../../features/Authentication/authSlice";
 
 const Login = () => {
-  // const [error, setError] = useState(false);
-  // const location = useLocation();
-  // const navigate = useNavigate();
-  // const { login, loginWithGoogle, loginWithFacebook, loginWithGithub } =
-  //   useContext(AuthContext);
+  const [error, setError] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
 
-  // const from = location.state?.form?.pathname || "/";
+  const from = location.state?.form?.pathname || "/";
 
-  // const onSubmit = (data) => {
-  //   login(data.email, data.password)
-  //     .then((res) => {
-  //       setError(false);
-  //       console.log(res);
-  //       navigate(from, { replace: true });
-  //     })
-  //     .catch((err) => {
-  //       setError(true);
-  //     });
-  // };
+  const onSubmit = (data) => {
+    login(data.email, data.password)
+      .then((res) => {
+        setError(false);
+        console.log(res);
+        navigate(from, { replace: true });
+      })
+      .catch(() => {
+        setError(true);
+      });
+  };
 
   // // login with google account
   // const handleLoginGoogle = () => {
@@ -98,7 +96,7 @@ const Login = () => {
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
             <h1 className="text-3xl text-center font-bold">Login</h1>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -108,7 +106,7 @@ const Login = () => {
                   name="email"
                   placeholder="email"
                   className="input input-bordered"
-                  // {...register("email", { required: true })}
+                  {...register("email", { required: true })}
                 />
               </div>
               <div className="form-control">
@@ -120,7 +118,7 @@ const Login = () => {
                   name="password"
                   placeholder="password"
                   className="input input-bordered"
-                  // {...register("password", { required: true })}
+                  {...register("password", { required: true })}
                 />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
