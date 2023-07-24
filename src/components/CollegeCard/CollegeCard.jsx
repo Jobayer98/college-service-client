@@ -11,7 +11,7 @@ const CollegeCard = ({ college }) => {
 
       <div className="px-4 py-4">
         {/* College Name */}
-        <h2 className="text-xl font-bold mb-2">{college.collegeName}</h2>
+        <h2 className="text-xl font-bold mb-2">{college?.collegeName}</h2>
 
         {/* Admission Dates */}
         <p className="text-gray-600 mb-2">
@@ -27,7 +27,7 @@ const CollegeCard = ({ college }) => {
         </div>
       </div>
       <div className="px-4 py-4">
-        <Link to={`colleges/${college.id}`}>See Details</Link>
+        <Link to={`${college?.id}`}>See Details</Link>
       </div>
     </div>
   );

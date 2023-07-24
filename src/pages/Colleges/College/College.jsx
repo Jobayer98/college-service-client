@@ -35,7 +35,7 @@ const College = () => {
           </p>
           <div>
             <h3 className="text-lg font-semibold mb-1">Admission Process</h3>
-            <p className="text-gray-600 mb-2">{college.admissionProcess}</p>
+            <p className="text-gray-600 mb-2">{college?.admissionProcess}</p>
           </div>
 
           {/* Events */}

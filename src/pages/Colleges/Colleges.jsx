@@ -1,41 +1,29 @@
-import Card from "../../components/UI/Card";
+import { useEffect, useState } from "react";
+import CollegeCard from "../../components/CollegeCard/CollegeCard";
 
 const Colleges = () => {
-  const collegeDetails = {
-    collegeName: "Sample College",
-    admissionDates: "August 2023 - September 2023",
-    events: ["Event 1", "Event 2", "Event 3"],
-    researchHistory:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer hendrerit lacinia mauris, ac feugiat magna porttitor ac.",
-    sports:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer hendrerit lacinia mauris, ac feugiat magna porttitor ac.",
-  };
+  const [colleges, setColleges] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/colleges")
+      .then((res) => {
+        res.json().then((data) => {
+          setColleges(data);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
-    <div className="max-w-5xl mx-auto py-8 my-32">
-      <div className="grid justify-center items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Card
-          collegeName={collegeDetails.collegeName}
-          admissionDates={collegeDetails.admissionDates}
-          events={collegeDetails.events}
-          researchHistory={collegeDetails.researchHistory}
-          sports={collegeDetails.sports}
-        />
-        <Card
-          collegeName={collegeDetails.collegeName}
-          admissionDates={collegeDetails.admissionDates}
-          events={collegeDetails.events}
-          researchHistory={collegeDetails.researchHistory}
-          sports={collegeDetails.sports}
-        />
-        <Card
-          collegeName={collegeDetails.collegeName}
-          admissionDates={collegeDetails.admissionDates}
-          events={collegeDetails.events}
-          researchHistory={collegeDetails.researchHistory}
-          sports={collegeDetails.sports}
-        />
+    <section className="max-w-6xl mx-auto my-24">
+      <h1 className="text-3xl font-bold text-center mb-4">Colleges</h1>
+      <div className="grid justify-center items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {colleges.map((college) => (
+          <CollegeCard key={college.id} college={college} />
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,7 +3,7 @@ const Why = () => {
   return (
     <section className="max-w-5xl mx-auto my-24">
       <h1 className="text-3xl font-bold text-center mb-4">
-        Why College Confidential?
+        Why College Connect?
       </h1>
       <div className="flex justify-center gap-4">
         <div className="p-4 flex flex-col items-center gap-3">

@@ -22,7 +22,9 @@ const NavBar = () => {
         </label>
       </div>
       <div className="flex-1 px-2 mx-2">
-        <Link to="/">Title</Link>
+        <Link to="/" className="text-2xl font-extrabold font-['Lugrasimo']">
+          College Connect
+        </Link>
       </div>
       <div className="flex-none hidden lg:block">
         <div className="flex items-center">

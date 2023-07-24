@@ -66,7 +66,7 @@ const PopularCollege = () => {
               />
               <div className="p-4">
                 <p className="text-gray-800 font-bold mb-2">
-                  `Colleges in {college.name}`
+                  Colleges in {college.name}
                 </p>
               </div>
             </div>
