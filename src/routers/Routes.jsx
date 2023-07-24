@@ -11,6 +11,7 @@ import MyCollege from "../pages/MyCollege/MyCollege";
 import Admission from "../pages/Admission/Admission";
 import Home from "../pages/Home/Home";
 import AdmissionForm from "../pages/Admission/AddmissionForm";
+import PrivateRoute from "../routers/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "colleges/:id",
-        element: <College />,
+        element: (
+          <PrivateRoute>
+            <College />
+          </PrivateRoute>
+        ),
       },
       {
         path: "admission",
@@ -36,11 +41,19 @@ const router = createBrowserRouter([
       },
       {
         path: "apply",
-        element: <AdmissionForm />,
+        element: (
+          <PrivateRoute>
+            <AdmissionForm />
+          </PrivateRoute>
+        ),
       },
       {
         path: "my-college",
-        element: <MyCollege />,
+        element: (
+          <PrivateRoute>
+            <MyCollege />
+          </PrivateRoute>
+        ),
       },
       {
         path: "about",

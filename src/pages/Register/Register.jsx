@@ -1,29 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // import img from "../../assets/images/login/login.svg";
-// import { useForm } from "react-hook-form";
-// import { useContext, useState } from "react";
-// import AuthContext from "../../context/AuthContext";
+import { useForm } from "react-hook-form";
+import { useContext, useState } from "react";
+import AuthContext from "../../context/AuthContext";
 
 const Register = () => {
-  // const [error, setError] = useState(false);
-  // const { createUser } = useContext(AuthContext);
-  // // navigate to home
-  // const location = useLocation();
-  // const navigate = useNavigate();
-  // const { register, handleSubmit } = useForm();
+  const [error, setError] = useState(false);
+  const { createUser } = useContext(AuthContext);
+  // navigate to home
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm();
 
-  // const from = location.state?.form?.pathname || "/";
+  const from = location.state?.form?.pathname || "/";
 
-  // const onSubmit = (data) => {
-  //   createUser(data?.email, data?.password)
-  //     .then((res) => {
-  //       console.log(res);
-  //       navigate(from, { replace: true });
-  //     })
-  //     .catch(() => {
-  //       setError(true);
-  //     });
-  // };
+  const onSubmit = (data) => {
+    createUser(data?.email, data?.password)
+      .then((res) => {
+        console.log(res);
+        navigate(from, { replace: true });
+      })
+      .catch(() => {
+        setError(true);
+      });
+  };
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -32,7 +32,7 @@ const Register = () => {
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
             <h1 className="text-3xl text-center font-bold">Sign Up</h1>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -42,7 +42,7 @@ const Register = () => {
                   name="name"
                   placeholder="name"
                   className="input input-bordered"
-                  // {...register("name", { required: true })}
+                  {...register("name", { required: true })}
                 />
               </div>
               <div className="form-control">
@@ -54,7 +54,7 @@ const Register = () => {
                   name="email"
                   placeholder="email"
                   className="input input-bordered"
-                  // {...register("email", { required: true })}
+                  {...register("email", { required: true })}
                 />
               </div>
               <div className="form-control">
@@ -66,7 +66,7 @@ const Register = () => {
                   name="password"
                   placeholder="password"
                   className="input input-bordered"
-                  // {...register("password", { required: true })}
+                  {...register("password", { required: true })}
                 />
               </div>
               <div className="form-control mt-6">

@@ -1,13 +1,14 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // import img from "../../assets/images/login/login.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import AuthContext from "../../context/AuthContext";
 import { useForm } from "react-hook-form";
-import { login } from "../../features/Authentication/authSlice";
 
 const Login = () => {
   const [error, setError] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const { register, handleSubmit } = useForm();
 

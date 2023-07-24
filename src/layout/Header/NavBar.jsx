@@ -1,8 +1,17 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Theme from "./Theme";
 import "./Navbar.css";
 import Search from "./Search";
+import { useContext } from "react";
+import AuthContext from "../../context/AuthContext";
 const NavBar = () => {
+  const { logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logout();
+    localStorage.removeItem("role");
+    navigate("/");
+  };
   return (
     <nav className="w-full navbar bg-base-200 text-base-content border-b border-b-gray-300 fixed">
       <div className="flex-none lg:hidden">
@@ -51,6 +60,9 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink to="/contact">Contact</NavLink>
+            </li>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
             </li>
           </ul>
           <Theme />
