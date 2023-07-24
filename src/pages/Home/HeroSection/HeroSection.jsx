@@ -7,7 +7,7 @@ const HeroSection = () => {
       style={{ backgroundImage: `url(${img})` }}
     >
       <div>
-        <h2 className="text-3xl md:text-4xl w-[324px] lg:w-full font-bold text-gray-900 bg-gray-50 md:bg-transparent">
+        <h2 className="text-3xl md:text-4xl w-[324px] xl:w-full font-bold text-gray-900 bg-gray-50 md:bg-transparent">
           The Real Deal On Applying To College
         </h2>
         <p className="w-[40%] text-sm md:text-base mt-4">

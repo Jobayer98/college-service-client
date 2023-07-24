@@ -3,12 +3,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthContext";
 import { useForm } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
+import { BsFacebook } from "react-icons/bs";
 
 const Login = () => {
   const [, setError] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext);
+  const { login, loginWithGoogle } = useContext(AuthContext);
 
   const { register, handleSubmit } = useForm();
 
@@ -26,26 +28,19 @@ const Login = () => {
       });
   };
 
-  // // login with google account
-  // const handleLoginGoogle = () => {
-  //   loginWithGoogle()
-  //     .then((res) => {
-  //       setError(false);
-  //       if (res?.user) {
-  //         notify();
-
-  //         const user = {
-  //           name: res.user.displayName,
-  //           email: res.user.email,
-  //         };
-  //         saveUser(user);
-  //         navigate(from, { replace: true });
-  //       }
-  //     })
-  //     .catch(() => {
-  //       setError(true);
-  //     });
-  // };
+  // login with google account
+  const handleLoginGoogle = () => {
+    loginWithGoogle()
+      .then((res) => {
+        setError(false);
+        if (res?.user) {
+          navigate(from, { replace: true });
+        }
+      })
+      .catch(() => {
+        setError(true);
+      });
+  };
 
   // // login with github account
   // const handleLoginGithub = () => {
@@ -142,7 +137,17 @@ const Login = () => {
                 Sign Up
               </Link>{" "}
             </p>
-            {/* <SocialLogin></SocialLogin> */}
+            <div className="flex justify-center gap-3">
+              <button
+                onClick={handleLoginGoogle}
+                className=" rounded-full transition duration-300 focus:bg-blue-50 active:bg-blue-100 hover:text-blue-400 border"
+              >
+                <FcGoogle className="text-4xl" />
+              </button>
+              <button className="rounded-full transition duration-300 focus:bg-blue-50 active:bg-blue-100 hover:text-blue-400 border">
+                <BsFacebook className="text-4xl text-blue-600" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

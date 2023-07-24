@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 const SideBar = () => {
-  const { logout } = useContext(AuthContext);
+  const { logout, user } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogout = () => {
     logout();
@@ -33,7 +33,11 @@ const SideBar = () => {
           <NavLink to="/contact">Contact</NavLink>
         </li>
         <li>
-          <button onClick={handleLogout}>Logout</button>
+          {user ? (
+            <button onClick={handleLogout}>Logout</button>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
         </li>
       </ul>
     </>

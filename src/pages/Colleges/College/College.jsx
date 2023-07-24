@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 const College = () => {
   const { id } = useParams();
-  const [college] = useFetch(`http://localhost:3000/colleges/${id}`);
+  const { college } = useFetch(`http://localhost:3000/colleges/${id}`);
   return (
     <div className="container mx-auto py-8 mt-16">
       <div className="max-w-4xl mx-auto overflow-hidden">

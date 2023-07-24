@@ -1,5 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import { Swiper, SwiperSlide } from "swiper/react";
+import useFetch from "../../../hooks/useFetch";
 
 // Import Swiper styles
 import "swiper/css";
@@ -8,50 +9,7 @@ import { Pagination } from "swiper/modules";
 
 import "@smastrom/react-rating/style.css";
 const CollegeReviews = () => {
-  // Sample data for college reviews
-  const collegeReviews = [
-    {
-      id: 1,
-      collegeName: "University of Fictionalville",
-      review:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod lorem sit amet quam tincidunt, in cursus turpis euismod.",
-      reviewer: "John Doe",
-      rating: 4.5,
-    },
-    {
-      id: 2,
-      collegeName: "Central College of Arts",
-      review:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod lorem sit amet quam tincidunt, in cursus turpis euismod.",
-      reviewer: "Jane Smith",
-      rating: 5,
-    },
-    {
-      id: 3,
-      collegeName: "Science Institute of Technology",
-      review:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod lorem sit amet quam tincidunt, in cursus turpis euismod.",
-      reviewer: "Michael Johnson",
-      rating: 4,
-    },
-    {
-      id: 4,
-      collegeName: "Central College of Arts",
-      review:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod lorem sit amet quam tincidunt, in cursus turpis euismod.",
-      reviewer: "Jane Smith",
-      rating: 5,
-    },
-    {
-      id: 5,
-      collegeName: "Science Institute of Technology",
-      review:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod lorem sit amet quam tincidunt, in cursus turpis euismod.",
-      reviewer: "Michael Johnson",
-      rating: 4,
-    },
-    // Add more reviews here...
-  ];
+  const { colleges: reviews } = useFetch("http://localhost:3000/reviews");
 
   return (
     <div className="max-w-4xl mx-auto my-20">
@@ -65,7 +23,7 @@ const CollegeReviews = () => {
         modules={[Pagination]}
         className="mySwiper hidden lg:block"
       >
-        {collegeReviews.map((review) => (
+        {reviews.map((review) => (
           <SwiperSlide
             key={review.id}
             className="myswiper bg-white rounded-lg shadow-md p-4 mb-16"
@@ -75,7 +33,11 @@ const CollegeReviews = () => {
             <p className="text-gray-800 font-bold">{review.reviewer}</p>
             <div className="flex items-center mt-2">
               <span>
-                <Rating style={{ maxWidth: 130 }} value={5} readOnly />
+                <Rating
+                  style={{ maxWidth: 130 }}
+                  value={review?.rating}
+                  readOnly
+                />
               </span>
             </div>
           </SwiperSlide>
@@ -90,7 +52,7 @@ const CollegeReviews = () => {
         modules={[Pagination]}
         className="mySwiper max-w-lg block lg:hidden"
       >
-        {collegeReviews.map((review) => (
+        {reviews.map((review) => (
           <SwiperSlide
             key={review.id}
             className="myswiper bg-white rounded-lg shadow-md p-4 mb-16"
@@ -100,7 +62,11 @@ const CollegeReviews = () => {
             <p className="text-gray-800 font-bold">{review.reviewer}</p>
             <div className="flex items-center mt-2">
               <span>
-                <Rating style={{ maxWidth: 130 }} value={5} readOnly />
+                <Rating
+                  style={{ maxWidth: 130 }}
+                  value={review?.rating}
+                  readOnly
+                />
               </span>
             </div>
           </SwiperSlide>

@@ -5,7 +5,7 @@ import Search from "./Search";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 const NavBar = () => {
-  const { logout } = useContext(AuthContext);
+  const { logout, user } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogout = () => {
     logout();
@@ -62,7 +62,11 @@ const NavBar = () => {
               <NavLink to="/contact">Contact</NavLink>
             </li>
             <li>
-              <button onClick={handleLogout}>Logout</button>
+              {user ? (
+                <button onClick={handleLogout}>Logout</button>
+              ) : (
+                <Link to="/login">Login</Link>
+              )}
             </li>
           </ul>
           <Theme />

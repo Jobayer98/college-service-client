@@ -10,8 +10,8 @@ const AdmissionForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log("Form submitted:", {
+    const collegeId = localStorage.getItem("collegeId");
+    const user = {
       name,
       phone,
       email,
@@ -19,7 +19,21 @@ const AdmissionForm = () => {
       subject,
       address,
       file,
-    });
+      collegeId,
+    };
+
+    fetch("http://localhost:3000/mycollege", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
 
     // Reset the form fields
     setName("");
