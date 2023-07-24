@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../../../useFetch";
-
+import useFetch from "../../../hooks/useFetch";
 const College = () => {
   const { id } = useParams();
   const [college] = useFetch(`http://localhost:3000/colleges/${id}`);

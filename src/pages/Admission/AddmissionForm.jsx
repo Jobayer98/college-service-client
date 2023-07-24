@@ -6,12 +6,11 @@ const AdmissionForm = () => {
   const [email, setEmail] = useState("");
   const [date, setDate] = useState(null);
   const [address, setAddress] = useState("");
+  const [file, setFile] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Perform form submission logic here
-    //API request to store the Admission details
     console.log("Form submitted:", {
       name,
       phone,
@@ -19,13 +18,17 @@ const AdmissionForm = () => {
       date,
       subject,
       address,
+      file,
     });
 
     // Reset the form fields
     setName("");
     setPhone("");
     setEmail("");
-    setDate("");
+    setDate(null);
+    setAddress("");
+    setFile(null);
+    setSubject("");
   };
 
   return (
@@ -108,7 +111,13 @@ const AdmissionForm = () => {
           </label>
           <input type="date" onChange={(e) => setDate(e.target.value)} />
         </div>
-        <div className="flex items-center justify-center">
+        <div className="mb-4">
+          <label className="block  text-sm font-bold mb-2" htmlFor="date">
+            Image
+          </label>
+          <input type="file" onChange={(e) => setFile(e.target.value)} />
+        </div>
+        <div className="flex items-center justify-end">
           <button
             className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-8"
             type="submit"

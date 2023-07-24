@@ -10,6 +10,7 @@ import College from "../pages/Colleges/College/College";
 import MyCollege from "../pages/MyCollege/MyCollege";
 import Admission from "../pages/Admission/Admission";
 import Home from "../pages/Home/Home";
+import AdmissionForm from "../pages/Admission/AddmissionForm";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "admission",
         element: <Admission />,
+      },
+      {
+        path: "apply",
+        element: <AdmissionForm />,
       },
       {
         path: "my-college",

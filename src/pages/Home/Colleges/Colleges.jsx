@@ -1,5 +1,5 @@
 import CollegeCard from "../../../components/CollegeCard/CollegeCard";
-import useFetch from "../../../useFetch";
+import useFetch from "../../../hooks/useFetch";
 
 const Colleges = () => {
   let [colleges] = useFetch("http://localhost:3000/colleges");
