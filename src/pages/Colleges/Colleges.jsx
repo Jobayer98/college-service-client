@@ -1,20 +1,8 @@
-import { useEffect, useState } from "react";
 import CollegeCard from "../../components/CollegeCard/CollegeCard";
+import useFetch from "../../useFetch";
 
 const Colleges = () => {
-  const [colleges, setColleges] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/colleges")
-      .then((res) => {
-        res.json().then((data) => {
-          setColleges(data);
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const [colleges] = useFetch("http://localhost:3000/colleges");
   return (
     <section className="max-w-6xl mx-auto my-24">
       <h1 className="text-3xl font-bold text-center mb-4">Colleges</h1>

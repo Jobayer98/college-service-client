@@ -25,9 +25,35 @@ const Card = ({ college }) => {
             hendrerit lacinia mauris.
           </p>
         </div>
+        <div className="mb-2">
+          <h3 className="text-lg font-semibold mb-2">Events</h3>
+
+          {college?.events?.map((event, index) => (
+            <div key={index}>
+              <p className="text-gray-600 font-medium mb-1">
+                {event.eventName}
+              </p>
+              <p className="text-gray-600">{event.date}</p>
+            </div>
+          ))}
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold mb-1">Research Work</h3>
+          {college?.researchWorks?.map((research, index) => (
+            <div key={index}>
+              <p className="text-gray-600 font-medium mb-1">{research.title}</p>
+              <p className="text-gray-600">{research.author}</p>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="px-4 py-4">
-        <Link to={`colleges/${college?.id}`}>See Details</Link>
+        <Link
+          to={`colleges/${college?.id}`}
+          className="link link-hover text-blue-700"
+        >
+          See Details
+        </Link>
       </div>
     </div>
   );
