@@ -5,14 +5,14 @@ import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthContext";
 
 const Register = () => {
-  const [error, setError] = useState(false);
+  const [, setError] = useState(false);
   const { createUser } = useContext(AuthContext);
   // navigate to home
   const location = useLocation();
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
 
-  const from = location.state?.form?.pathname || "/";
+  const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
     createUser(data?.email, data?.password)

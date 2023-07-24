@@ -1,6 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
 
 const SideBar = () => {
+  const { logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logout();
+    localStorage.removeItem("role");
+    navigate("/");
+  };
   return (
     <>
       <ul className="menu p-4 pt-8 w-80 h-full bg-base-200">
@@ -22,6 +31,9 @@ const SideBar = () => {
         </li>
         <li>
           <NavLink to="/contact">Contact</NavLink>
+        </li>
+        <li>
+          <button onClick={handleLogout}>Logout</button>
         </li>
       </ul>
     </>
