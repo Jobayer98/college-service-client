@@ -7,6 +7,7 @@ import HeroSection from "./HeroSection/HeroSection";
 import Search from "./Search/Search";
 import PopularCollege from "./PopularCollege/PopularCollege";
 import CollegePlan from "./CollegePlan/CollegePlan";
+import Why from "./AboutUs/Why";
 
 const Home = () => {
   const [colleges, setColleges] = useState([]);
@@ -25,9 +26,10 @@ const Home = () => {
   return (
     <div>
       <HeroSection />
+      <Why />
       <PopularCollege />
       <Search />
-      <section className="max-w-5xl mx-auto my-24">
+      <section className="max-w-6xl mx-auto my-24">
         <h1 className="text-3xl font-bold text-center mb-4">Colleges</h1>
         <div className="grid justify-center items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {colleges.map((college) => (

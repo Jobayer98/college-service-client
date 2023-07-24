@@ -54,7 +54,7 @@ const CollegeReviews = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto my-20">
+    <div className="max-w-6xl mx-auto my-20">
       <h2 className="text-2xl font-bold mb-8 text-center">College Reviews</h2>
       <Swiper
         slidesPerView={2}

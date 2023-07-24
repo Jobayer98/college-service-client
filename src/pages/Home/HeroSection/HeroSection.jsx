@@ -3,7 +3,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 const HeroSection = () => {
   return (
     <div
-      className="bg-[#f1eff0] h-[324px] md:h-[624] lg:h-[711px] flex flex-col justify-center bg-center bg-cover pl-12 lg:pl-32 my-16"
+      className="bg-[#f1eff0] h-[324px] md:h-[591px] lg:h-[712px] flex flex-col justify-center bg-cover pl-12 lg:pl-32 my-16"
       style={{ backgroundImage: `url(${img})` }}
     >
       <div>

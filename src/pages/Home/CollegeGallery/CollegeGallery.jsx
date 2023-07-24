@@ -10,7 +10,7 @@ const CollegeImageGallery = () => {
   }));
 
   return (
-    <section className="max-w-4xl mx-auto my-8">
+    <section className="max-w-5xl mx-auto my-8">
       <h2 className="text-2xl font-bold mb-4">
         College Graduate Image Gallery
       </h2>
