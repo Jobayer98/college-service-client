@@ -1,8 +1,21 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../../../hooks/useFetch";
+
+import { useEffect, useState } from "react";
 const College = () => {
+  const [college, setCollege] = useState(null);
   const { id } = useParams();
-  const { college } = useFetch(`http://localhost:3000/colleges/${id}`);
+  useEffect(() => {
+    fetch(`http://localhost:3001/colleges/${id}`).then((res) => {
+      res
+        .json()
+        .then((data) => {
+          setCollege(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  }, [id]);
   return (
     <div className="container mx-auto py-8 mt-16">
       <div className="max-w-4xl mx-auto overflow-hidden">

@@ -9,7 +9,7 @@ import { Pagination } from "swiper/modules";
 
 import "@smastrom/react-rating/style.css";
 const CollegeReviews = () => {
-  const { colleges: reviews } = useFetch("http://localhost:3000/reviews");
+  const { colleges: reviews } = useFetch("http://localhost:3001/reviews");
 
   return (
     <div className="max-w-4xl mx-auto my-20">
@@ -25,7 +25,7 @@ const CollegeReviews = () => {
       >
         {reviews.map((review) => (
           <SwiperSlide
-            key={review.id}
+            key={review._id}
             className="myswiper bg-white rounded-lg shadow-md p-4 mb-16"
           >
             <h3 className="text-lg font-bold mb-2">{review.collegeName}</h3>
@@ -54,7 +54,7 @@ const CollegeReviews = () => {
       >
         {reviews.map((review) => (
           <SwiperSlide
-            key={review.id}
+            key={review._id}
             className="myswiper bg-white rounded-lg shadow-md p-4 mb-16"
           >
             <h3 className="text-lg font-bold mb-2">{review.collegeName}</h3>

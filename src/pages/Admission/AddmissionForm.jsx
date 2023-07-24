@@ -10,7 +10,7 @@ const AdmissionForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const collegeId = localStorage.getItem("collegeId");
+    const collegeId = localStorage.setItem("collegeId");
     const user = {
       name,
       phone,

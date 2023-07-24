@@ -46,7 +46,7 @@ const CollegeCard = ({ college }) => {
       </div>
       <div className="px-4 py-4">
         <Link
-          to={`/colleges/${college?.id}`}
+          to={`/colleges/${college?._id}`}
           className="link link-hover text-blue-700"
         >
           See Details
